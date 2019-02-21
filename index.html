@@ -109,7 +109,7 @@
 			<div class="row">
 				<div class="col-md-6 text-center animated wow fadeInLeft">
 					<div class="iphone">
-						<img src="img/iphone.png" alt="" titl="">
+						<img alt="" titl="" src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/iphone.png">
 					</div>
 				</div>
 				<div class="col-md-6 animated wow fadeInRight">
@@ -288,6 +288,18 @@
 
 	<script type="text/javascript" src="js/ajaxchimp.js" defer></script>
 
+	<script>
+		function init() {
+			var imgDefer = document.getElementsByTagName('img');
+			for (var i = 0; i < imgDefer.length; i++) {
+				if (imgDefer[i].getAttribute('data-src')) {
+					imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+				} 
+			}
+		}
+
+		window.onload = init;
+	</script>
 	<script type="text/javascript" src="js/owl.carousel.min.js" defer></script>
 	<script type="text/javascript" src="js/wow.js" asnyc></script>
 	<script type="text/javascript" src="js/parallax.js" defer></script>
